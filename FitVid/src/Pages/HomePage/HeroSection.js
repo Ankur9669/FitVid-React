@@ -1,6 +1,7 @@
 import React from "react";
 import PrimaryButton from "../../Components/Buttons/PrimaryButton";
 // import SecondaryButton from "../../Components/Buttons/SecondaryButton";
+import { Link } from "react-router-dom";
 import "./herosection.css";
 const HeroSection = () => {
   return (
@@ -16,7 +17,9 @@ const HeroSection = () => {
         <p className="hero-heading">
           The World Of <p className="inline hero-heading-sub-text">FITNESS</p>
         </p>
-        <PrimaryButton buttonText="Explore Now" className="hero-button" />
+        <Link to="/videos">
+          <PrimaryButton buttonText="Explore Now" className="hero-button" />
+        </Link>
       </div>
     </div>
   );
