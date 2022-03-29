@@ -1,0 +1,34 @@
+.footer{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+}
+.footer-items{
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.footer-item-icon{
+    font-size: 1.8rem;
+}
+.footer-item-active{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.footer-item-text{
+    margin-top: 3px;
+}
+@media only screen and (max-width: 800px){
+    .footer{
+        display: block;
+    }
+}
