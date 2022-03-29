@@ -1,0 +1,10 @@
+.content{
+    grid-column-start: 2;
+    grid-column-end: 3; 
+}
+@media only screen and (max-width: 800px){
+    .content{
+        grid-column-start: 1;
+        grid-column-end: 3; 
+    } 
+}

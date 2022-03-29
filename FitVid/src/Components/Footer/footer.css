@@ -4,6 +4,7 @@
     bottom: 0px;
     width: 100%;
     height: 60px;
+    background-color: var(--background-color);
 }
 .footer-items{
     display: flex;

@@ -6,6 +6,7 @@ import {
   AiOutlineHistory,
   AiOutlineSearch,
   MdOutlineExplore,
+  RiPlayListAddFill,
 } from "../../Assets/icons";
 const SideBar = () => {
   return (
@@ -24,8 +25,8 @@ const SideBar = () => {
           Like
         </p>
         <p className="sidebar-item">
-          <AiOutlineSearch className="sidebar-icon" />
-          Search
+          <RiPlayListAddFill className="sidebar-icon" />
+          PlayLists
         </p>
         <p className="sidebar-item">
           <AiOutlineHistory className="sidebar-icon" />
