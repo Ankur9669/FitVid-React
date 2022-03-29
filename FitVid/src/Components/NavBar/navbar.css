@@ -1,0 +1,26 @@
+.navbar{
+    font-size: 1.5rem;
+}
+.logo{
+    margin: 0 2rem 0rem 1rem;
+}
+.logo-sub-text{
+    font-size: inherit;
+    color: var(--secondary-text-color);
+}
+.searchbar-container{
+    flex: 2;
+}
+.btn-container-navbar{
+    margin: 0 1rem;
+}
+/* Due to specificity issues i have to write this */
+.input-box .navbar-search{
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px){
+    .logo{
+        margin: 0 1rem;
+    }
+}
