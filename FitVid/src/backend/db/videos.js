@@ -3,6 +3,8 @@
  * You can add videos of your wish with different attributes
  * */
 
+// author image url
+// channel name
 export const videos = [
   {
     _id: "Wo5dMEP_BbI",

@@ -2,7 +2,7 @@ import "./App.css";
 
 import Homepage from "./Pages/HomePage/Homepage";
 import { Routes, Route } from "react-router-dom";
-import VideoListing from "./Pages/HomePage/VideoListing/VideoListing";
+import VideoListing from "./Pages/VideoListing/VideoListing";
 
 function App() {
   return (

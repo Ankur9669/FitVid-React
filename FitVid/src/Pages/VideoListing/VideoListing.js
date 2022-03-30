@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../../../Components/Footer/Footer";
-import Navbar from "../../../Components/NavBar/Navbar";
-import SideBar from "../../../Components/SideBar/SideBar";
-import HeroSection from "../HeroSection";
+import Footer from "../../Components/Footer/Footer";
+import Navbar from "../../Components/NavBar/Navbar";
+import SideBar from "../../Components/SideBar/SideBar";
+import VideosContainer from "./VideosContainer/VideosContainer";
 
 const VideoListing = () => {
   return (
@@ -11,7 +11,7 @@ const VideoListing = () => {
       <div className="content-section">
         <SideBar />
         <div className="content">
-          <HeroSection />
+          <VideosContainer />
         </div>
         <Footer />
       </div>
