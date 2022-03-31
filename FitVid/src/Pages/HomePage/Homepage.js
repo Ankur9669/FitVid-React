@@ -8,13 +8,11 @@ import "./homepage.css";
 const Homepage = () => {
   return (
     <div>
-      <Navbar />
       <div className="content-section">
         <SideBar />
         <div className="content">
           <HeroSection />
         </div>
-        <Footer />
       </div>
     </div>
   );
