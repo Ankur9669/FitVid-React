@@ -1,0 +1,26 @@
+.sidebar{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: var(--background-color);
+    width: 250px;
+}
+.sidebar-items{
+    margin-top: 1.5rem;
+}
+.sidebar-item{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    margin: 0 7px;
+}
+.sidebar-item-active{
+    border-bottom: 2px solid var(--primary-color);
+    border-left: 2px solid var(--primary-color);
+    border-top: 2px solid var(--primary-color);
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+.sidebar-icon{
+    margin: 0 0.5rem 0 1rem;
+}
