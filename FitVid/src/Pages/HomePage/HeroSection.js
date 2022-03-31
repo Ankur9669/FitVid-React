@@ -1,8 +1,8 @@
 import React from "react";
 import PrimaryButton from "../../Components/Buttons/PrimaryButton";
-// import SecondaryButton from "../../Components/Buttons/SecondaryButton";
 import { Link } from "react-router-dom";
 import "./herosection.css";
+
 const HeroSection = () => {
   return (
     <div className="hero-section">
