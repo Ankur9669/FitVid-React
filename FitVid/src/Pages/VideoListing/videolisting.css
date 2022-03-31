@@ -7,8 +7,9 @@
 .videolisting-video-container{
     width: 20rem;
     margin: 0.5rem;
+    border-radius: 0.1rem;
     cursor: pointer;
-    background-color: rgb(49, 47, 47);
+    background-color: var(--background-color-dark);
 }
 .videolisting-video{
     width: 100%;
@@ -16,8 +17,8 @@
 }
 .thumbnail-text-container{
     display: grid;
-    grid-template-columns: 50px auto;
-    margin: 0.5rem;
+    grid-template-columns: 3.1rem auto;
+    margin: 1rem 0.5rem;
 }
 .thumbnail-container{
     grid-column-start: 1;
@@ -78,15 +79,11 @@
     .videolisting-video-container{
         width: 15rem;
         margin: 0.5rem;
-        cursor: pointer;
-        background-color: rgb(49, 47, 47);
     }
 }
 @media only screen and (max-width: 452px){
     .videolisting-video-container{
         width: 100%;
         margin: 1rem;
-        cursor: pointer;
-        background-color: rgb(49, 47, 47);
     }
 }
