@@ -4,6 +4,10 @@ import {
   AiFillLike,
   AiOutlineLike,
   AiOutlineHistory,
+  AiOutlineMail,
+  AiFillEyeInvisible,
+  AiFillEye,
+  AiFillCloseSquare,
 } from "react-icons/ai";
 import { MdOutlineExplore, MdWatchLater } from "react-icons/md";
 import { RiPlayListAddFill } from "react-icons/ri";
@@ -15,8 +19,12 @@ export {
   AiFillLike,
   AiOutlineLike,
   AiOutlineHistory,
+  AiOutlineMail,
+  AiFillEyeInvisible,
+  AiFillEye,
   MdOutlineExplore,
   MdWatchLater,
   RiPlayListAddFill,
   FiMoreVertical,
+  AiFillCloseSquare,
 };

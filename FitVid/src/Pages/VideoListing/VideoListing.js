@@ -7,12 +7,14 @@ import VideosContainer from "./VideosContainer/VideosContainer";
 const VideoListing = () => {
   return (
     <div>
+      <Navbar />
       <div className="content-section">
         <SideBar />
         <div className="content">
           <VideosContainer />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
