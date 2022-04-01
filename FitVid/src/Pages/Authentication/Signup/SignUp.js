@@ -1,7 +1,5 @@
 import React from "react";
-
 import "../authentication.css";
-
 import { AiFillMail } from "react-icons/ai";
 import {
   AiOutlineMail,
@@ -11,6 +9,7 @@ import {
 import SignupForm from "./SignupForm";
 import AuthenticationBackground from "../AuthenticationBackground";
 import Navbar from "../../../Components/NavBar/Navbar";
+
 function SignUp() {
   return (
     <div>

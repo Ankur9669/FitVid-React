@@ -1,7 +1,6 @@
 .authentication{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* background-color: var(--light-blue); */
     border-radius: 8px;
     width: 90%;
     max-width: 93.7rem;

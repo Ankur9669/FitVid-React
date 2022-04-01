@@ -1,13 +1,11 @@
 import Axios from "axios";
 const loginUser = async (email, password) => {
-  console.log(email, password);
   try {
     const response = await Axios.post("/api/auth/login", {
       email: email,
       password: password,
     });
 
-    console.log(response);
     const token = response.data.encodedToken;
     localStorage.setItem("token", token);
 

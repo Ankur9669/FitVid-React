@@ -12,7 +12,7 @@ function ForgotPassword() {
         <AuthenticationBackground />
         <div className="authentication login">
           <div className="authentication-image-container">
-            <img src="images/fitvid-forgot-password.svg" alt="signup-image" />
+            <img src="images/fitvid-forgot-password.svg" alt="forgotpassword" />
           </div>
           <ForgotPasswordForm />
         </div>
