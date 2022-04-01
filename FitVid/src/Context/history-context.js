@@ -10,12 +10,12 @@ const HistoryProvider = ({ children }) => {
     initialState
   );
   return (
-    <HistoryContext.Provider value={{ likedVideos, dispatchLikedVideos }}>
+    <HistoryContext.Provider value={{ historyVideos, dispatchHistoryVideos }}>
       {children}
     </HistoryContext.Provider>
   );
 };
 
-const useLiked = () => useContext(HistoryContext);
+const useHistory = () => useContext(HistoryContext);
 
-export { useLiked, HistoryProvider };
+export { useHistory, HistoryProvider };
