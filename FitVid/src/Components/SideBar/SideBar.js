@@ -8,30 +8,40 @@ import {
   MdOutlineExplore,
   RiPlayListAddFill,
 } from "../../Assets/icons";
+import { NavLink } from "react-router-dom";
+
 const SideBar = () => {
+  const findActive = ({ isActive }) => {
+    return {
+      borderBottom: isActive && "2px solid var(--primary-color)",
+    };
+  };
   return (
     <aside className="sidebar">
       <div className="sidebar-items">
-        <p className="sidebar-item sidebar-item-active">
+        <NavLink to="/" style={findActive} className="sidebar-item">
           <AiFillHome className="sidebar-icon" />
           Home
-        </p>
-        <p className="sidebar-item">
+        </NavLink>
+        <NavLink to="/videos" style={findActive} className="sidebar-item">
           <MdOutlineExplore className="sidebar-icon" />
           Explore
-        </p>
-        <p className="sidebar-item">
+        </NavLink>
+
+        <NavLink to="/liked" style={findActive} className="sidebar-item">
           <AiFillLike className="sidebar-icon" />
           Like
-        </p>
-        <p className="sidebar-item">
+        </NavLink>
+
+        <NavLink to="/playlist" style={findActive} className="sidebar-item">
           <RiPlayListAddFill className="sidebar-icon" />
           PlayLists
-        </p>
-        <p className="sidebar-item">
+        </NavLink>
+
+        <NavLink to="/history" style={findActive} className="sidebar-item">
           <AiOutlineHistory className="sidebar-icon" />
           History
-        </p>
+        </NavLink>
       </div>
     </aside>
   );

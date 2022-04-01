@@ -11,6 +11,7 @@ import {
   loginUser,
   uuid,
   useToast,
+  useUser,
 } from "../index";
 import "../authentication.css";
 
@@ -20,8 +21,8 @@ function Loginform() {
     password: "",
   });
   const [isPasswordVisible, setPasswordVisible] = useState(false);
-  const { dispatchToast } = useToast();
-  // const { user, dispatchUser } = useUser();
+  const { showToast } = useToast();
+  const { user, dispatchUser } = useUser();
 
   const navigate = useNavigate();
 
@@ -29,13 +30,6 @@ function Loginform() {
     //TODO VALIDATIONS
     e.preventDefault();
     loginUser();
-  };
-
-  const showToast = (title, type) => {
-    dispatchToast({
-      type: "ADD_TOAST",
-      payload: { value: { id: uuid(), title: title, type: type } },
-    });
   };
 
   const handleLoginClick = (e) => {
@@ -46,6 +40,10 @@ function Loginform() {
     );
 
     if (success) {
+      dispatchUser({
+        type: "LOGIN",
+        payload: { value: data },
+      });
       showToast(message, "SUCCESS");
       navigate("/");
     } else {
@@ -60,10 +58,11 @@ function Loginform() {
     );
 
     if (success) {
-      dispatchToast({
-        type: "ADD_TOAST",
-        payload: { value: { id: uuid(), title: message, type: "SUCCESS" } },
+      dispatchUser({
+        type: "LOGIN",
+        payload: { value: data },
       });
+      showToast(message, "SUCCESS");
       navigate("/");
     } else {
       dispatchToast({

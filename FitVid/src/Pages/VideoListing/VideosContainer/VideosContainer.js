@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Video from "./Video";
+import Video from "../../../Components/Video/Video";
 import "../videolisting.css";
-import { videos } from "../../../Temp/video";
 import { fetchVideos } from "../../../Util/fetch-videos";
 
 const VideosContainer = () => {
