@@ -2,6 +2,7 @@ import {
   AiFillHome,
   AiOutlineSearch,
   AiFillLike,
+  AiOutlineLike,
   AiOutlineHistory,
 } from "react-icons/ai";
 import { MdOutlineExplore, MdWatchLater } from "react-icons/md";
@@ -12,6 +13,7 @@ export {
   AiFillHome,
   AiOutlineSearch,
   AiFillLike,
+  AiOutlineLike,
   AiOutlineHistory,
   MdOutlineExplore,
   MdWatchLater,

@@ -4,6 +4,8 @@ import {
   FiMoreVertical,
   MdWatchLater,
   RiPlayListAddFill,
+  AiFillLike,
+  AiOutlineLike,
 } from "../../../Assets/icons";
 
 const Video = (props) => {
@@ -50,6 +52,10 @@ const Video = (props) => {
             <p className="video-modal-item">
               <RiPlayListAddFill className="video-modal-icon" />
               Add to Playlist
+            </p>
+            <p className="video-modal-item">
+              <AiOutlineLike className="video-modal-icon" />
+              Add to Liked Videos
             </p>
           </div>
         </div>
