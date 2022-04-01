@@ -5,14 +5,12 @@ import {
   AiFillEye,
   PrimaryButton,
   SecondaryButton,
-  Axios,
   Link,
   useNavigate,
   useToast,
-  uuid,
+  useUser,
 } from "../index";
 import "../authentication.css";
-// import { useUser } from "../../../Context/user-context";
 import { signUpUser } from "../../../Util/signupUser";
 
 function SignupForm() {
@@ -23,21 +21,14 @@ function SignupForm() {
     password: "",
   });
   const [isPasswordVisible, setPasswordVisible] = useState(false);
-  // const { user, dispatchUser } = useUser();
-  const { dispatchToast } = useToast();
+  const { user, dispatchUser } = useUser();
+  const { showToast } = useToast();
   const navigate = useNavigate();
 
   const onSubmitForm = (e) => {
     //TODO VALIDATIONS
     e.preventDefault();
     handleSignUpClick();
-  };
-
-  const showToast = (title, type) => {
-    dispatchToast({
-      type: "ADD_TOAST",
-      payload: { value: { id: uuid(), title: title, type: type } },
-    });
   };
 
   const handleSignUpClick = async () => {
@@ -50,6 +41,10 @@ function SignupForm() {
 
     if (success) {
       showToast(message, "SUCCESS");
+      dispatchUser({
+        type: "LOGIN",
+        payload: { value: data },
+      });
       navigate("/");
     } else {
       showToast(message, "ERROR");

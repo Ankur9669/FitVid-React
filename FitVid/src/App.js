@@ -9,6 +9,7 @@ import ForgotPassword from "./Pages/Authentication/ForgotPassword";
 import Login from "./Pages/Authentication/Login/Login";
 import SignUp from "./Pages/Authentication/Signup/SignUp";
 import Toasts from "./Util/Toasts/Toasts";
+import LikedVideos from "./Pages/LikedVideos/LikedVideos";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="videos" element={<VideoListing />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="signup" element={<SignUp />}></Route>
+        <Route path="liked" element={<LikedVideos />}></Route>
         {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>
     </div>
