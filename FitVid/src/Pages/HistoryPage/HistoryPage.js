@@ -4,6 +4,7 @@ import {likedVideos} from "../../Temp/likedvideos";
 import "./historypage.css";
 
 const HistoryPage = () => {
+    const {historyVideos} = useHistory();
   return (
     <div>
       <Navbar />
@@ -11,10 +12,10 @@ const HistoryPage = () => {
         <SideBar />
         <div className="content">
           <h1 className="history-videos-heading">My History</h1>
-          {likedVideos.length > 0 ? (
+          {historyVideos.length > 0 ? (
             <div className="history-videos-video-container">
-              {likedVideos.map((likedVideo) => {
-                return <Video key={likedVideo._id} video={likedVideo} />;
+              {historyVideos.map((historyVideo) => {
+                return <Video key={historyVideo._id} video={historyVideo} />;
               })}
             </div>
           ) : (
