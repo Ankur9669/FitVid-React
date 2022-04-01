@@ -5,16 +5,22 @@ import { Routes, Route } from "react-router-dom";
 import VideoListing from "./Pages/VideoListing/VideoListing";
 import Navbar from "./Components/NavBar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import ForgotPassword from "./Pages/Authentication/ForgotPassword";
+import Login from "./Pages/Authentication/Login/Login";
+import SignUp from "./Pages/Authentication/Signup/SignUp";
+import Toasts from "./Util/Toasts/Toasts";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Toasts />
       <Routes>
         <Route path="/" element={<Homepage />} index></Route>
         <Route path="videos" element={<VideoListing />}></Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="signup" element={<SignUp />}></Route>
+        {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>
-      <Footer />
     </div>
   );
 }

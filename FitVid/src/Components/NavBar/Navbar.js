@@ -1,14 +1,14 @@
 import React from "react";
 import "./navbar.css";
 import PrimaryButton from "../Buttons/PrimaryButton";
-import SecondaryButton from "../Buttons/SecondaryButton";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo-container">
-        <p className="logo">
+        <Link to="/" className="logo">
           Fit<p className="logo-sub-text">Vid</p>
-        </p>
+        </Link>
       </div>
       <div className="searchbar-container">
         <div className="input-box">
@@ -20,7 +20,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="btn-container-navbar">
-        <PrimaryButton buttonText="Login" />
+        <Link to="/login">
+          <PrimaryButton buttonText="Login" />
+        </Link>
       </div>
     </nav>
   );
