@@ -44,7 +44,8 @@ const Video = (props) => {
   const { user } = useUser();
   const { historyVideos, dispatchHistoryVideos } = useHistory();
   const { watchLaterVideos, dispatchWatchLaterVideos } = useWatchLater();
-  const { showPlayListModal, setShowPlayListModal } = useModal();
+  const { showPlayListModal, setShowPlayListModal, setClickedVideo } =
+    useModal();
   const navigate = useNavigate();
 
   const handleClickOnMoreIcon = () => {
@@ -88,8 +89,9 @@ const Video = (props) => {
     }
   };
 
-  const handlePlayListItemClick = async () => {
+  const handlePlayListItemClick = () => {
     setShowPlayListModal((showPlayListModal) => !showPlayListModal);
+    setClickedVideo(video);
   };
   const handleWatchLaterItemClick = async () => {
     if (!user.isUserLoggedIn) {

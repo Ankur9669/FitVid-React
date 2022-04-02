@@ -5,10 +5,20 @@ import { findIfVideoExistsInArray } from "../../../Util/find-if-video-exists-in-
 const PlayListItem = (props) => {
   const playlist = props.playlist;
   const playlistVideos = props.playlist.videos;
+  const video = props.video;
 
-  console.log(playlistVideos);
-  //   let ifVideoExistsInPlayList = findIfVideoExistsInArray(playlistVideos);
-  const handleInputChange = () => {};
+  console.log(video);
+  let ifVideoExistsInPlayList = findIfVideoExistsInArray(
+    playlistVideos,
+    video._id
+  );
+  const handleInputChange = () => {
+    if (!ifVideoExistsInPlayList) {
+      // Add To Playlist
+    } else {
+      // Remove From PlayList
+    }
+  };
   return (
     <div className="playlist-item" key={playlist._id}>
       <input
