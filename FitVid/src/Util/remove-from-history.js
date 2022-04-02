@@ -23,4 +23,26 @@ const removeFromHistoryVideos = async (videoId) => {
   }
 };
 
-export { removeFromHistoryVideos };
+const deleteHistory = async () => {
+  const token = localStorage.getItem("token");
+  try {
+    const response = await Axios.delete("/api/user/history/all", {
+      headers: {
+        authorization: token,
+      },
+    });
+    return {
+      data: response.data,
+      success: true,
+      message: "History Cleared",
+    };
+  } catch (e) {
+    console.log(e);
+    return {
+      data: "",
+      success: false,
+      message: `SomeThing Went Wrong ${e}`,
+    };
+  }
+};
+export { removeFromHistoryVideos, deleteHistory };

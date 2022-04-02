@@ -1,20 +1,63 @@
-import React from 'react'
-import { Navbar, Footer, SideBar, Video, useHistory, EmptyList} from "./index";
-import {likedVideos} from "../../Temp/likedvideos";
+import React, { useEffect } from "react";
+import {
+  Navbar,
+  Footer,
+  SideBar,
+  Video,
+  useHistory,
+  EmptyList,
+  useNavigate,
+  useToast,
+  useUser,
+  deleteHistory,
+} from "./index";
 import "./historypage.css";
+import SecondaryButton from "../../Components/Buttons/SecondaryButton";
 
 const HistoryPage = () => {
-    const {historyVideos} = useHistory();
+  const { historyVideos, dispatchHistoryVideos } = useHistory();
+  const historyVideosToShow = [...historyVideos].reverse();
+  const { user } = useUser();
+  const { showToast } = useToast();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user.isUserLoggedIn) {
+      showToast("Please Login First", "ERROR");
+      navigate("/login");
+    }
+  }, []);
+
+  const handleClearHistoryClick = async () => {
+    const { data, success, message } = await deleteHistory();
+    if (success) {
+      dispatchHistoryVideos({
+        type: "SET_HISTORY_LIST",
+        payload: { value: data.history },
+      });
+      showToast("History Deleted Successfully", "SUCCESS");
+    } else {
+      showToast("Something went wrong", "ERROR");
+    }
+  };
   return (
     <div>
       <Navbar />
       <div className="content-section">
         <SideBar />
         <div className="content">
-          <h1 className="history-videos-heading">My History</h1>
-          {historyVideos.length > 0 ? (
+          <div className="history-videos-heading-container">
+            <h1 className="history-videos-heading">My History</h1>
+            <SecondaryButton
+              className="clear-history-button"
+              buttonText="Clear History"
+              onClick={handleClearHistoryClick}
+            />
+          </div>
+
+          {historyVideosToShow.length > 0 ? (
             <div className="history-videos-video-container">
-              {historyVideos.map((historyVideo) => {
+              {historyVideosToShow.map((historyVideo) => {
                 return <Video key={historyVideo._id} video={historyVideo} />;
               })}
             </div>
@@ -25,7 +68,7 @@ const HistoryPage = () => {
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default HistoryPage
+export default HistoryPage;
