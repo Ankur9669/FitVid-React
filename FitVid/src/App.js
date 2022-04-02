@@ -12,11 +12,13 @@ import Toasts from "./Util/Toasts/Toasts";
 import LikedVideos from "./Pages/LikedVideos/LikedVideos";
 import HistoryPage from "./Pages/HistoryPage/HistoryPage";
 import WatchLater from "./Pages/WatchLater/WatchLater";
+import PlayListModal from "./Components/PlayListModal/PlayListModal";
 
 function App() {
   return (
     <div className="App">
       <Toasts />
+      <PlayListModal />
       <Routes>
         <Route path="/" element={<Homepage />} index></Route>
         <Route path="videos" element={<VideoListing />}></Route>

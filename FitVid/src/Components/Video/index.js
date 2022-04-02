@@ -12,6 +12,7 @@ import { removeFromWatchLaterVideos } from "../../Util/remove-from-watch-later";
 import { useToast } from "../../Context/toast-context";
 import { useUser } from "../../Context/user-context";
 import { useNavigate } from "react-router-dom";
+import { useModal } from "../../Context/playlist-modal-context";
 
 export {
   ReactPlayer,
@@ -28,4 +29,5 @@ export {
   useToast,
   useUser,
   useNavigate,
+  useModal,
 };

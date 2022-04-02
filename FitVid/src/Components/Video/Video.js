@@ -22,6 +22,7 @@ import {
   useHistory,
   addToHistoryVideos,
   removeFromHistoryVideos,
+  useModal,
 } from "./index";
 
 import "./video.css";
@@ -43,6 +44,7 @@ const Video = (props) => {
   const { user } = useUser();
   const { historyVideos, dispatchHistoryVideos } = useHistory();
   const { watchLaterVideos, dispatchWatchLaterVideos } = useWatchLater();
+  const { showPlayListModal, setShowPlayListModal } = useModal();
   const navigate = useNavigate();
 
   const handleClickOnMoreIcon = () => {
@@ -87,14 +89,7 @@ const Video = (props) => {
   };
 
   const handlePlayListItemClick = async () => {
-    if (!user.isUserLoggedIn) {
-      navigate("/login");
-      showToast("Please Login First", "ERROR");
-      return;
-    }
-    if (isLikedVideo) {
-    } else {
-    }
+    setShowPlayListModal((showPlayListModal) => !showPlayListModal);
   };
   const handleWatchLaterItemClick = async () => {
     if (!user.isUserLoggedIn) {
@@ -206,9 +201,9 @@ const Video = (props) => {
                 </>
               )}
             </p>
-            <p className="video-modal-item">
+            <p className="video-modal-item" onClick={handlePlayListItemClick}>
               <RiPlayListAddFill className="video-modal-icon" />
-              Add to Playlist
+              Save to Playlist
             </p>
             <p className="video-modal-item" onClick={handleLikedItemClick}>
               {!isLikedVideo ? (

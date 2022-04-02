@@ -1,0 +1,32 @@
+.playlist-modal-content{
+    min-width: 15rem;
+    min-height: 10rem;
+    background-color: var(--background-color);
+}
+.playlist-modal-title-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 2px solid var(--border-bottom-white);
+}
+.playlist-modal-close-icon{
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+    cursor: pointer;
+}
+.playlist-modal-close-icon:hover{
+    background-color: var(--background-color-dark);
+    opacity: 0.9;
+    border-radius: 0.1rem;
+}
+
+/*  */
+
+.playlists{
+    /* margin: 1rem 0; */
+    padding: 0rem 1rem;
+    border-bottom: 2px solid var(--border-bottom-white);
+}
+
+
+/*  */
