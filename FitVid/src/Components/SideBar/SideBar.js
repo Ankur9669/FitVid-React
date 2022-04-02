@@ -7,6 +7,7 @@ import {
   AiOutlineSearch,
   MdOutlineExplore,
   RiPlayListAddFill,
+  MdWatchLater,
 } from "../../Assets/icons";
 import { NavLink } from "react-router-dom";
 
@@ -36,6 +37,11 @@ const SideBar = () => {
         <NavLink to="/playlist" style={findActive} className="sidebar-item">
           <RiPlayListAddFill className="sidebar-icon" />
           PlayLists
+        </NavLink>
+
+        <NavLink to="/watchlater" style={findActive} className="sidebar-item">
+          <MdWatchLater className="sidebar-icon" />
+          Watch Later
         </NavLink>
 
         <NavLink to="/history" style={findActive} className="sidebar-item">

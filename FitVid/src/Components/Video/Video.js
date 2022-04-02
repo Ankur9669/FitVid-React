@@ -5,13 +5,17 @@ import {
   RiPlayListAddFill,
   AiFillLike,
   AiOutlineLike,
+  MdOutlineWatchLater,
 } from "../../Assets/icons";
 import {
   ReactPlayer,
   useLiked,
+  useWatchLater,
   findIfVideoExistsInArray,
   addToLikedVideos,
   removeFromLikedVideos,
+  addToWatchLaterVideos,
+  removeFromWatchLaterVideos,
   useToast,
   useUser,
   useNavigate,
@@ -38,6 +42,7 @@ const Video = (props) => {
   const { showToast } = useToast();
   const { user } = useUser();
   const { historyVideos, dispatchHistoryVideos } = useHistory();
+  const { watchLaterVideos, dispatchWatchLaterVideos } = useWatchLater();
   const navigate = useNavigate();
 
   const handleClickOnMoreIcon = () => {
@@ -46,6 +51,7 @@ const Video = (props) => {
 
   let isLikedVideo = findIfVideoExistsInArray(likedVideos, _id);
   let isVideoInHistory = findIfVideoExistsInArray(historyVideos, _id);
+  let isVideoInWatchLater = findIfVideoExistsInArray(watchLaterVideos, _id);
 
   const handleLikedItemClick = async () => {
     if (!user.isUserLoggedIn) {
@@ -80,7 +86,7 @@ const Video = (props) => {
     }
   };
 
-  const handlePlayListItemClick = () => {
+  const handlePlayListItemClick = async () => {
     if (!user.isUserLoggedIn) {
       navigate("/login");
       showToast("Please Login First", "ERROR");
@@ -90,14 +96,36 @@ const Video = (props) => {
     } else {
     }
   };
-  const handleWatchLaterItemClick = () => {
+  const handleWatchLaterItemClick = async () => {
     if (!user.isUserLoggedIn) {
       navigate("/login");
       showToast("Please Login First", "ERROR");
       return;
     }
-    if (isLikedVideo) {
+    if (!isVideoInWatchLater) {
+      const { data, success, message } = await addToWatchLaterVideos(video);
+      if (success) {
+        dispatchWatchLaterVideos({
+          type: "SET_WATCH_LATER_LIST",
+          payload: { value: data.watchlater },
+        });
+        showToast(message, "SUCCESS");
+      } else {
+        // Show Error
+        showToast(message, "ERROR");
+      }
     } else {
+      const { data, success, message } = await removeFromWatchLaterVideos(_id);
+      if (success) {
+        dispatchWatchLaterVideos({
+          type: "SET_WATCH_LATER_LIST",
+          payload: { value: data.watchlater },
+        });
+        showToast(message, "SUCCESS");
+      } else {
+        // Show Error
+        showToast(message, "ERROR");
+      }
     }
   };
 
@@ -133,6 +161,7 @@ const Video = (props) => {
       }
     }
   };
+
   return (
     <div
       className="videolisting-video-container"
@@ -164,9 +193,18 @@ const Video = (props) => {
             className="video-modal"
             style={{ display: showModal ? "block" : "none" }}
           >
-            <p className="video-modal-item">
-              <MdWatchLater className="video-modal-icon" />
-              Add to Watch Later
+            <p className="video-modal-item" onClick={handleWatchLaterItemClick}>
+              {!isVideoInWatchLater ? (
+                <>
+                  <MdOutlineWatchLater className="video-modal-icon" />
+                  Add to Watch Later
+                </>
+              ) : (
+                <>
+                  <MdWatchLater className="video-modal-icon" />
+                  Remove from Watch Later
+                </>
+              )}
             </p>
             <p className="video-modal-item">
               <RiPlayListAddFill className="video-modal-icon" />
