@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const PlayListModalContext = createContext();
 
 const PlayListModalProvider = ({ children }) => {
-  const [showPlayListModal, setShowPlayListModal] = useState(true);
+  const [showPlayListModal, setShowPlayListModal] = useState(false);
   return (
     <PlayListModalContext.Provider
       value={{ showPlayListModal, setShowPlayListModal }}

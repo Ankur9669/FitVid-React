@@ -13,6 +13,7 @@ import LikedVideos from "./Pages/LikedVideos/LikedVideos";
 import HistoryPage from "./Pages/HistoryPage/HistoryPage";
 import WatchLater from "./Pages/WatchLater/WatchLater";
 import PlayListModal from "./Components/PlayListModal/PlayListModal";
+import PlayLists from "./Pages/PlayLists/PlayLists";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="liked" element={<LikedVideos />}></Route>
         <Route path="history" element={<HistoryPage />}></Route>
         <Route path="watchlater" element={<WatchLater />}></Route>
+        <Route path="playlist" element={<PlayLists />}></Route>
         {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>
     </div>

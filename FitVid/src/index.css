@@ -24,4 +24,5 @@ code {
     --secondary-text-color: #fd5056;
     --color-black: #000000;
     --border-bottom-white: #dfdfdf;
+    --playlist-text-overlay: rgba(8, 8, 8, 0.779);
 }
