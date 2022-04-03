@@ -11,6 +11,7 @@ const playListReducer = (playLists, action) => {
       const newPlayLists = [...playLists];
       newPlayLists[playlistIndex] = updatedplayList;
       return newPlayLists;
+
     default:
       return playLists;
   }

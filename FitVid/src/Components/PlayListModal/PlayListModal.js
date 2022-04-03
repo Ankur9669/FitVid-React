@@ -1,12 +1,13 @@
 import React from "react";
-import { useModal } from "../../Context/playlist-modal-context";
 import "./playlistmodal.css";
-import { AiOutlineClose } from "../../Assets/icons";
-import NewPlaylist from "./NewPlayList/NewPlaylist";
-import { usePlayLists } from "../../Context/playlist-context";
-import PlayListItem from "./PlayListItem/PlayListItem";
-
-const PlayListModal = (props) => {
+import {
+  useModal,
+  AiOutlineClose,
+  NewPlaylist,
+  usePlayLists,
+  PlayListItem,
+} from "./index";
+const PlayListModal = () => {
   const { showPlayListModal, setShowPlayListModal, clickedVideo } = useModal();
   const { playLists } = usePlayLists();
 

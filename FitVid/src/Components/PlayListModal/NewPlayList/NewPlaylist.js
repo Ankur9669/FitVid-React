@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { RiPlayListAddFill } from "../../../Assets/icons";
-import SecondaryButton from "../../Buttons/SecondaryButton";
 import "./newplaylist.css";
-import { createPlayList } from "../../../Util/create-playlist";
-import { findIfPlayListExistsInArray } from "../../../Util/find-if-video-exists-in-array";
-import { useToast } from "../../Video";
-import { usePlayLists } from "../../../Context/playlist-context";
+import {
+  RiPlayListAddFill,
+  SecondaryButton,
+  createPlayList,
+  findIfPlayListExistsInArray,
+  useToast,
+  usePlayLists,
+} from "./index";
 
 const NewPlaylist = () => {
   const [isCreateNewPlayListClicked, setCreateNewPlayListClicked] =

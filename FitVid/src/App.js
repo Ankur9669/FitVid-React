@@ -29,7 +29,7 @@ function App() {
         <Route path="liked" element={<LikedVideos />}></Route>
         <Route path="history" element={<HistoryPage />}></Route>
         <Route path="watchlater" element={<WatchLater />}></Route>
-        <Route path="playlist" element={<PlayLists />}></Route>
+        <Route path="playlists" element={<PlayLists />}></Route>
         <Route path="playlist/:playlistId" element={<PlayList />}></Route>
         {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>

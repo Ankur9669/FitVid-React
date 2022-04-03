@@ -20,7 +20,7 @@ const EmptyPlayList = () => {
           className="img-responsive"
         />
       </div>
-      <p className="font-large weight-semi-bold">
+      <p className="font-large weight-semi-bold centered-text">
         You don't have any Playlists
       </p>
       <div className="spacer-1"></div>

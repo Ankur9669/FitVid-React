@@ -24,7 +24,15 @@
     font-size: 1.6rem;
 }
 .playlist-video-text-container{
+    position: relative;
     margin-top: 0.2rem;
+}
+.playlist-delete-icon{
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 @media only screen and (max-width: 450px){
     .playlist-video{

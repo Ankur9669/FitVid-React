@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import PlayListVideo from "./PlayListVideo/PlayListVideo";
 import "./playlists.css";
 import EmptyPlayList from "./EmptyPlayList/EmptyPlayList";
+import SecondaryButton from "../../Components/Buttons/SecondaryButton";
 
 const PlayLists = () => {
   const { playLists, dispatchPlayLists } = usePlayLists();
@@ -25,11 +26,14 @@ const PlayLists = () => {
       <div className="content-section">
         <SideBar />
         <div className="content">
-          <h1 className="likedvideos-heading">PlayLists</h1>
+          <div className="playlists-videos-heading-container">
+            <h1 className="playlists-videos-heading">PlayLists</h1>
+          </div>
+
           {playLists.length > 0 ? (
             <div className="playlists-container">
               {playLists.map((playList) => {
-                return <PlayListVideo playList={playList} />;
+                return <PlayListVideo playList={playList} key={playList._id} />;
               })}
             </div>
           ) : (
