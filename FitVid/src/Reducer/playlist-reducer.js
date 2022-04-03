@@ -10,7 +10,6 @@ const playListReducer = (playLists, action) => {
       );
       const newPlayLists = [...playLists];
       newPlayLists[playlistIndex] = updatedplayList;
-      console.log(newPlayLists);
       return newPlayLists;
     default:
       return playLists;

@@ -37,7 +37,6 @@ const NewPlaylist = () => {
     }
     const { data, success, message } = await createPlayList(playListTitle);
     if (success) {
-      console.log(data.playlists);
       dispatchPlayLists({
         type: "SET_PLAYLISTS",
         payload: { value: data.playlists },

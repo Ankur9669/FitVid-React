@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FiMoreVertical,
   MdWatchLater,
@@ -24,11 +24,14 @@ import {
   removeFromHistoryVideos,
   useModal,
 } from "./index";
-
+import { usePlayLists } from "../../Context/playlist-context";
+import { removeFromPlayList } from "../PlayListModal/PlayListItem";
+import { useParams } from "react-router-dom";
 import "./video.css";
 
 const Video = (props) => {
   const video = props.video;
+  const isPlayListVideo = props.isPlayListVideo || false;
   const {
     _id,
     url,
@@ -47,6 +50,8 @@ const Video = (props) => {
   const { showPlayListModal, setShowPlayListModal, setClickedVideo } =
     useModal();
   const navigate = useNavigate();
+  const { playLists, dispatchPlayLists } = usePlayLists();
+  const { playlistId } = useParams();
 
   const handleClickOnMoreIcon = () => {
     setShowModal((showModal) => !showModal);
@@ -89,14 +94,30 @@ const Video = (props) => {
     }
   };
 
-  const handlePlayListItemClick = () => {
+  const handlePlayListItemClick = async () => {
     if (!user.isUserLoggedIn) {
       navigate("/login");
       showToast("Please Login First", "ERROR");
       return;
     }
-    setShowPlayListModal((showPlayListModal) => !showPlayListModal);
-    setClickedVideo(video);
+    if (!isPlayListVideo) {
+      setShowPlayListModal((showPlayListModal) => !showPlayListModal);
+      setClickedVideo(video);
+    } else {
+      const { data, success, message } = await removeFromPlayList(
+        _id,
+        playlistId
+      );
+      if (success) {
+        dispatchPlayLists({
+          type: "SET_PLAYLIST_VIDEOS",
+          payload: { value: data.playlist },
+        });
+        showToast("Removed From PlayList", "SUCCESS");
+      } else {
+        showToast("Something Went Wrong", "ERROR");
+      }
+    }
   };
   const handleWatchLaterItemClick = async () => {
     if (!user.isUserLoggedIn) {
@@ -210,7 +231,11 @@ const Video = (props) => {
             </p>
             <p className="video-modal-item" onClick={handlePlayListItemClick}>
               <RiPlayListAddFill className="video-modal-icon" />
-              Save to Playlist
+              {!isPlayListVideo ? (
+                <>Save to Playlist</>
+              ) : (
+                <>Remove From PlayList</>
+              )}
             </p>
             <p className="video-modal-item" onClick={handleLikedItemClick}>
               {!isLikedVideo ? (

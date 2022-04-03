@@ -8,12 +8,14 @@ import EmptyList from "../../Components/EmptyList/EmptyList";
 import { usePlayLists } from "../../Context/playlist-context";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "./playlist.css";
 
 const PlayList = () => {
   const { playLists, dispatchPlayLists } = usePlayLists();
   const { playlistId } = useParams();
   const navigate = useNavigate();
   const [playlistVideos, setPlaylistVideos] = useState([]);
+  const [playlistTitle, setPlaylistTitle] = useState("");
 
   useEffect(() => {
     const playlist = playLists.find((playlist) => playlist._id === playlistId);
@@ -23,7 +25,8 @@ const PlayList = () => {
       return null;
     }
     setPlaylistVideos(playlist.videos);
-  }, []);
+    setPlaylistTitle(playlist.title);
+  }, [playLists]);
 
   return (
     <div>
@@ -31,11 +34,17 @@ const PlayList = () => {
       <div className="content-section">
         <SideBar />
         <div className="content">
-          <h1 className="likedvideos-heading">Test 1</h1>
+          <h1 className="playlist-heading">{playlistTitle}</h1>
           {playlistVideos.length > 0 ? (
-            <div className="likedvideos-video-container">
+            <div className="playlist-video-container">
               {playlistVideos.map((playlistVideo) => {
-                return <Video key={playlistVideo._id} video={playlistVideo} />;
+                return (
+                  <Video
+                    key={playlistVideo._id}
+                    video={playlistVideo}
+                    isPlayListVideo={true}
+                  />
+                );
               })}
             </div>
           ) : (
