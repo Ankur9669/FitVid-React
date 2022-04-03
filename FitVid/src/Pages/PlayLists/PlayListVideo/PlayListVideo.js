@@ -1,11 +1,13 @@
 import React from "react";
 import "./playlistvideo.css";
 import { RiPlayListAddFill } from "../../../Assets/icons";
+import { Link } from "react-router-dom";
 
 const PlayListVideo = (props) => {
   const playList = props.playList;
+
   return (
-    <div className="playlist-video">
+    <Link to={`/playlist/${playList._id}`} className="playlist-video">
       <div className="playlist-video-thumbnail-container">
         <img
           src="images/fitvid-hero-1.jpg"
@@ -23,7 +25,7 @@ const PlayListVideo = (props) => {
         <p className="playlist-name font-medium">{playList.title}</p>
         <p className="playlist-cta-button font-medium">View Full PlayList</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
