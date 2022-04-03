@@ -5,6 +5,7 @@ import { Navbar, SideBar, useToast, useUser, Footer } from "../LikedVideos";
 import { useNavigate } from "react-router-dom";
 import PlayListVideo from "./PlayListVideo/PlayListVideo";
 import "./playlists.css";
+import EmptyPlayList from "./EmptyPlayList/EmptyPlayList";
 
 const PlayLists = () => {
   const { playLists, dispatchPlayLists } = usePlayLists();
@@ -32,7 +33,7 @@ const PlayLists = () => {
               })}
             </div>
           ) : (
-            <EmptyList />
+            <EmptyPlayList />
           )}
         </div>
       </div>

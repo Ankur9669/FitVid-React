@@ -90,6 +90,11 @@ const Video = (props) => {
   };
 
   const handlePlayListItemClick = () => {
+    if (!user.isUserLoggedIn) {
+      navigate("/login");
+      showToast("Please Login First", "ERROR");
+      return;
+    }
     setShowPlayListModal((showPlayListModal) => !showPlayListModal);
     setClickedVideo(video);
   };

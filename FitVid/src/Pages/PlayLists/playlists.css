@@ -1,5 +1,10 @@
 .playlists-container{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     margin: 1rem;
+}
+@media only screen and (max-width: 450px){
+    .playlists-container{
+        justify-content: center;
+    }   
 }
