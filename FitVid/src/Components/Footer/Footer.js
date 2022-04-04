@@ -6,35 +6,48 @@ import {
   AiOutlineHistory,
   AiOutlineSearch,
   MdOutlineExplore,
+  RiPlayListAddFill,
+  MdWatchLater,
 } from "../../Assets/icons";
+import { NavLink } from "react-router-dom";
 const Footer = () => {
+  const findActive = ({ isActive }) => {
+    return {
+      color: isActive && "var(--primary-color)",
+    };
+  };
   return (
     <footer className="footer">
       <div className="footer-items">
-        <div className="footer-item footer-item-active">
+        <NavLink to="/" style={findActive} className="footer-item">
           <AiFillHome className="footer-item-icon " />
           <p className="font-small footer-item-text">Home</p>
-        </div>
+        </NavLink>
 
-        <div className="footer-item ">
+        <NavLink to="/videos" style={findActive} className="footer-item ">
           <MdOutlineExplore className="footer-item-icon " />
           <p className="font-small footer-item-text">Explore</p>
-        </div>
+        </NavLink>
 
-        <div className="footer-item ">
+        <NavLink to="/liked" style={findActive} className="footer-item ">
           <AiFillLike className="footer-item-icon " />
           <p className="font-small footer-item-text">Like</p>
-        </div>
+        </NavLink>
 
-        <div className="footer-item">
-          <AiOutlineSearch className="footer-item-icon " />
-          <p className="font-small footer-item-text">Search</p>
-        </div>
+        <NavLink to="/playlists" style={findActive} className="footer-item">
+          <RiPlayListAddFill className="footer-item-icon " />
+          <p className="font-small footer-item-text">PlayLists</p>
+        </NavLink>
 
-        <div className="footer-item">
+        <NavLink to="/watchlater" style={findActive} className="footer-item">
+          <MdWatchLater className="footer-item-icon " />
+          <p className="font-small footer-item-text">WatchLater</p>
+        </NavLink>
+
+        <NavLink to="/history" style={findActive} className="footer-item">
           <AiOutlineHistory className="footer-item-icon " />
           <p className="font-small footer-item-text">History</p>
-        </div>
+        </NavLink>
       </div>
     </footer>
   );
