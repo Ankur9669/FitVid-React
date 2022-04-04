@@ -11,6 +11,8 @@ import SignUp from "./Pages/Authentication/Signup/SignUp";
 import Toasts from "./Util/Toasts/Toasts";
 import LikedVideos from "./Pages/LikedVideos/LikedVideos";
 import HistoryPage from "./Pages/HistoryPage/HistoryPage";
+import WatchLater from "./Pages/WatchLater/WatchLater";
+
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="signup" element={<SignUp />}></Route>
         <Route path="liked" element={<LikedVideos />}></Route>
         <Route path="history" element={<HistoryPage />}></Route>
+        <Route path="watchlater" element={<WatchLater />}></Route>
+
         {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>
     </div>
