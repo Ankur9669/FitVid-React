@@ -1,0 +1,31 @@
+.history-videos-heading-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-bottom-white);
+    margin: 2rem 0 1rem 0;
+}
+.history-videos-heading{
+    font-size: 2rem;
+    text-align: center;
+}
+.clear-history-button{
+    position: absolute;
+    right: 20px;
+    top: 0px;
+}
+
+.history-videos-video-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+@media only screen and (max-width: 700px){
+    .clear-history-button{
+        position: relative;
+        margin-left: auto;
+    }
+}
