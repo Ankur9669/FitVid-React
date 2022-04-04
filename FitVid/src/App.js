@@ -13,6 +13,7 @@ import LikedVideos from "./Pages/LikedVideos/LikedVideos";
 import HistoryPage from "./Pages/HistoryPage/HistoryPage";
 import WatchLater from "./Pages/WatchLater/WatchLater";
 
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
         <Route path="liked" element={<LikedVideos />}></Route>
         <Route path="history" element={<HistoryPage />}></Route>
         <Route path="watchlater" element={<WatchLater />}></Route>
+
         {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>
     </div>

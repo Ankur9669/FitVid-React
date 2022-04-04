@@ -10,6 +10,7 @@ import { LikedProvider } from "./Context/liked-context";
 import { HistoryProvider } from "./Context/history-context";
 import { WatchLaterProvider } from "./Context/watch-later-context";
 
+
 // Call make Server
 makeServer();
 
@@ -28,6 +29,7 @@ ReactDOM.render(
         </LikedProvider>
       </HistoryProvider>
     </WatchLaterProvider>
+
   </React.StrictMode>,
   document.getElementById("root")
 );

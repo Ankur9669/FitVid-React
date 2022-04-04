@@ -42,7 +42,9 @@ const Video = (props) => {
   const { showToast } = useToast();
   const { user } = useUser();
   const { historyVideos, dispatchHistoryVideos } = useHistory();
+
   const { watchLaterVideos, dispatchWatchLaterVideos } = useWatchLater();
+
   const navigate = useNavigate();
 
   const handleClickOnMoreIcon = () => {
@@ -52,6 +54,7 @@ const Video = (props) => {
   let isLikedVideo = findIfVideoExistsInArray(likedVideos, _id);
   let isVideoInHistory = findIfVideoExistsInArray(historyVideos, _id);
   let isVideoInWatchLater = findIfVideoExistsInArray(watchLaterVideos, _id);
+
 
   const handleLikedItemClick = async () => {
     if (!user.isUserLoggedIn) {
@@ -125,6 +128,39 @@ const Video = (props) => {
       } else {
         // Show Error
         showToast(message, "ERROR");
+      }
+    }
+  };
+
+  const handleVideoPlayClick = async () => {
+    if (!isVideoInHistory) {
+      const { data, success, message } = await addToHistoryVideos(video);
+      if (success) {
+        dispatchHistoryVideos({
+          type: "SET_HISTORY_LIST",
+          payload: { value: data.history },
+        });
+      } else {
+        showToast("Unable to push in history", "ERROR");
+      }
+    } else {
+      // This means Video is available in
+      // history that means we first need to remove
+      // than update the history list
+
+      const { data, success, message } = await removeFromHistoryVideos(_id);
+      if (success) {
+        const { data, success, message } = await addToHistoryVideos(video);
+        if (success) {
+          dispatchHistoryVideos({
+            type: "SET_HISTORY_LIST",
+            payload: { value: data.history },
+          });
+        } else {
+          showToast("Unable to push in history", "ERROR");
+        }
+      } else {
+        showToast("Error in deleting item", "ERROR");
       }
     }
   };
