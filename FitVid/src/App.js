@@ -15,6 +15,7 @@ import WatchLater from "./Pages/WatchLater/WatchLater";
 import PlayListModal from "./Components/PlayListModal/PlayListModal";
 import PlayLists from "./Pages/PlayLists/PlayLists";
 import PlayList from "./Pages/PlayList/PlayList";
+import SingleVideoPage from "./Pages/SingleVideoPage/SingleVideoPage";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="watchlater" element={<WatchLater />}></Route>
         <Route path="playlists" element={<PlayLists />}></Route>
         <Route path="playlist/:playlistId" element={<PlayList />}></Route>
+        <Route path="videos/:videoId" element={<SingleVideoPage />}></Route>
         {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>
     </div>

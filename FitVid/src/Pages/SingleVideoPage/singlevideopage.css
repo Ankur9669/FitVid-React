@@ -1,0 +1,14 @@
+.single-video-page-container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    min-height: 100vh;
+    
+}
+@media only screen and (max-width: 1450px){
+    .single-video-page-container{
+        display: grid;
+        grid-template-columns: 100%;
+        min-height: 100vh;
+        justify-items: center;
+    }   
+}
