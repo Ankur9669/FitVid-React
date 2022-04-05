@@ -18,6 +18,7 @@ import {
 } from "react-icons/md";
 import { RiPlayListAddFill } from "react-icons/ri";
 import { FiMoreVertical } from "react-icons/fi";
+import { BsFillPlayFill } from "react-icons/bs";
 
 export {
   AiFillHome,
@@ -36,4 +37,5 @@ export {
   AiFillCloseSquare,
   AiOutlineClose,
   AiFillDelete,
+  BsFillPlayFill,
 };
