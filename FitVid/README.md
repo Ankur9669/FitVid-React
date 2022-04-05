@@ -2,7 +2,7 @@
 
 FitVid is a video platform, where you can find all the videos related to fitness, You can watch them and stay informed on how to be fit.
 
-![fitvid-image](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid.png)
+![fitvid-image](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid.png)
 
 ---
 
@@ -55,3 +55,15 @@ FitVid is a video platform, where you can find all the videos related to fitness
 # SignUp
 
 ![fitvid-signup](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid-signup.png)
+
+# PlayList Page
+
+![fitvid-playlist](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid-create-playlist.png)
+
+# Watch Later
+
+![fitvid-watch-later](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid-watch-later.png)
+
+# History
+
+![fitvid-history](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid-history.png)
