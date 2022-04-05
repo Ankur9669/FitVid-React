@@ -8,6 +8,8 @@ import {
   AiFillEyeInvisible,
   AiFillEye,
   AiFillCloseSquare,
+  AiOutlineClose,
+  AiFillDelete,
 } from "react-icons/ai";
 import {
   MdOutlineExplore,
@@ -32,4 +34,6 @@ export {
   RiPlayListAddFill,
   FiMoreVertical,
   AiFillCloseSquare,
+  AiOutlineClose,
+  AiFillDelete,
 };

@@ -34,7 +34,7 @@ const SideBar = () => {
           Like
         </NavLink>
 
-        <NavLink to="/playlist" style={findActive} className="sidebar-item">
+        <NavLink to="/playlists" style={findActive} className="sidebar-item">
           <RiPlayListAddFill className="sidebar-icon" />
           PlayLists
         </NavLink>

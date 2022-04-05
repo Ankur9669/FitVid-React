@@ -1,0 +1,13 @@
+.playlist-heading{
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-bottom-white);
+}
+.playlist-video-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 1rem;
+}

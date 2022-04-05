@@ -1,0 +1,15 @@
+.playlist-item{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.playlist-item-checkbox{
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 0.4rem;
+}
+.playlist-item-label{
+   font-size: 1.1rem;
+   width: 100%;
+   cursor: pointer;
+}

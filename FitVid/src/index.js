@@ -9,27 +9,31 @@ import { UserProvider } from "./Context/user-context";
 import { LikedProvider } from "./Context/liked-context";
 import { HistoryProvider } from "./Context/history-context";
 import { WatchLaterProvider } from "./Context/watch-later-context";
-
+import { PlayListModalProvider } from "./Context/playlist-modal-context";
+import { PlayListsProvider } from "./Context/playlist-context";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <WatchLaterProvider>
-      <HistoryProvider>
-        <LikedProvider>
-          <UserProvider>
-            <ToastProvider>
-              <Router>
-                <App />
-              </Router>
-            </ToastProvider>
-          </UserProvider>
-        </LikedProvider>
-      </HistoryProvider>
-    </WatchLaterProvider>
-
+    <PlayListsProvider>
+      <PlayListModalProvider>
+        <WatchLaterProvider>
+          <HistoryProvider>
+            <LikedProvider>
+              <UserProvider>
+                <ToastProvider>
+                  <Router>
+                    <App />
+                  </Router>
+                </ToastProvider>
+              </UserProvider>
+            </LikedProvider>
+          </HistoryProvider>
+        </WatchLaterProvider>
+      </PlayListModalProvider>
+    </PlayListsProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

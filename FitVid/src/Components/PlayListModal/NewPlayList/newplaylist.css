@@ -1,0 +1,22 @@
+.new-playlist-item{
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+.new-playlist-item-container{
+    margin: 1rem;
+}
+.new-playlist-icon{
+    margin-right: 0.3rem;
+    font-size: 1.1rem;
+}
+.create-playlist-button{
+    display: block;
+   
+    color: var(--primary-color);
+    padding: 4px 8px;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
