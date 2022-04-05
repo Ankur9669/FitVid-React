@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import Video from "../../../Components/Video/Video";
 import "../videolisting.css";
 import { fetchVideos } from "../../../Util/fetch-videos";
+import { useVideos } from "../../../Context/videos-context";
 
 const VideosContainer = () => {
-  const [videos, setVideos] = useState([]);
+  const { videos, setVideos } = useVideos();
 
   useEffect(async () => {
     const { data, success, message } = await fetchVideos();
