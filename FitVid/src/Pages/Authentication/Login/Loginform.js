@@ -32,9 +32,9 @@ function Loginform() {
     loginUser();
   };
 
-  const handleLoginClick = (e) => {
+  const handleLoginClick = async (e) => {
     e.preventDefault();
-    const { data, success, message } = loginUser(
+    const { data, success, message } = await loginUser(
       formDetails.email,
       formDetails.password
     );
@@ -65,10 +65,7 @@ function Loginform() {
       showToast(message, "SUCCESS");
       navigate("/");
     } else {
-      dispatchToast({
-        type: "ADD_TOAST",
-        payload: { value: { id: uuid(), title: message, type: "ERROR" } },
-      });
+      showToast(message, "ERROR");
       console.log(message);
     }
   };
