@@ -18,25 +18,25 @@ makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <CategoryProvider>
-      <PlayListsProvider>
-        <PlayListModalProvider>
-          <WatchLaterProvider>
-            <HistoryProvider>
-              <LikedProvider>
-                <UserProvider>
-                  <ToastProvider>
-                    <Router>
+    <Router>
+      <CategoryProvider>
+        <PlayListsProvider>
+          <PlayListModalProvider>
+            <WatchLaterProvider>
+              <HistoryProvider>
+                <LikedProvider>
+                  <UserProvider>
+                    <ToastProvider>
                       <App />
-                    </Router>
-                  </ToastProvider>
-                </UserProvider>
-              </LikedProvider>
-            </HistoryProvider>
-          </WatchLaterProvider>
-        </PlayListModalProvider>
-      </PlayListsProvider>
-    </CategoryProvider>
+                    </ToastProvider>
+                  </UserProvider>
+                </LikedProvider>
+              </HistoryProvider>
+            </WatchLaterProvider>
+          </PlayListModalProvider>
+        </PlayListsProvider>
+      </CategoryProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

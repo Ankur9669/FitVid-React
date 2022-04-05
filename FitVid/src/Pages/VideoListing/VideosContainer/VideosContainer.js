@@ -3,6 +3,7 @@ import Video from "../../../Components/Video/Video";
 import "../videolisting.css";
 import { fetchVideos } from "../../../Util/fetch-videos";
 import { useCategory } from "../../../Context/category-context";
+import { getFilteredVideos } from "../../../Util/get-filtered-videos";
 
 const VideosContainer = () => {
   const [videos, setVideos] = useState([]);
@@ -24,12 +25,7 @@ const VideosContainer = () => {
     let filteredVideos = videos;
 
     if (search !== "") {
-      filteredVideos = videos.filter(
-        (video) =>
-          video.categoryName.toLowerCase().includes(search.toLowerCase()) ||
-          video.title.toLowerCase().includes(search.toLowerCase()) ||
-          video.channelName.toLowerCase().includes(search.toLowerCase())
-      );
+      filteredVideos = getFilteredVideos(videos, search);
     }
     if (category !== "All") {
       filteredVideos = filteredVideos.filter(
