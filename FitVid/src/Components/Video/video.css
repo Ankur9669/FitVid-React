@@ -6,8 +6,6 @@
     background-color: var(--background-color-dark);
 }
 .videolisting-video-thumbnail{
-    width: 100%;
-    height: 100%;
     object-fit: contain;
 }
 .videolisting-thumbnail-container{

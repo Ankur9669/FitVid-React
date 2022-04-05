@@ -12,6 +12,7 @@ import { WatchLaterProvider } from "./Context/watch-later-context";
 import { PlayListModalProvider } from "./Context/playlist-modal-context";
 import { PlayListsProvider } from "./Context/playlist-context";
 import { CategoryProvider } from "./Context/category-context";
+import { VideosProvider } from "./Context/video-context";
 
 // Call make Server
 makeServer();
@@ -19,23 +20,25 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <CategoryProvider>
-        <PlayListsProvider>
-          <PlayListModalProvider>
-            <WatchLaterProvider>
-              <HistoryProvider>
-                <LikedProvider>
-                  <UserProvider>
-                    <ToastProvider>
-                      <App />
-                    </ToastProvider>
-                  </UserProvider>
-                </LikedProvider>
-              </HistoryProvider>
-            </WatchLaterProvider>
-          </PlayListModalProvider>
-        </PlayListsProvider>
-      </CategoryProvider>
+      <VideosProvider>
+        <CategoryProvider>
+          <PlayListsProvider>
+            <PlayListModalProvider>
+              <WatchLaterProvider>
+                <HistoryProvider>
+                  <LikedProvider>
+                    <UserProvider>
+                      <ToastProvider>
+                        <App />
+                      </ToastProvider>
+                    </UserProvider>
+                  </LikedProvider>
+                </HistoryProvider>
+              </WatchLaterProvider>
+            </PlayListModalProvider>
+          </PlayListsProvider>
+        </CategoryProvider>
+      </VideosProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
