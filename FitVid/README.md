@@ -35,3 +35,15 @@ FitVid is a video platform, where you can find all the videos related to fitness
 - Search Video
 
 - Custom Toasts
+
+# HomePage
+
+![fitvid-image](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid.png)
+
+# Video Listing Page
+
+![fitvid-videolisting](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-videolisting.png)
+
+# Single Video Page
+
+![fitvid-singlevideo](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-single-video-page.png)
