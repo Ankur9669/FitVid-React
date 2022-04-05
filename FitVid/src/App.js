@@ -14,6 +14,8 @@ import {
   PlayList,
 } from "./Pages/index";
 import SingleVideoPage from "./Pages/SingleVideoPage/SingleVideoPage";
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import Loader from "./Components/Loader/Loader";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         <Route path="playlists" element={<PlayLists />}></Route>
         <Route path="playlist/:playlistId" element={<PlayList />}></Route>
         <Route path="videos/:videoId" element={<SingleVideoPage />}></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
+        <Route path="loading" element={<Loader />}></Route>
         {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>
     </div>
