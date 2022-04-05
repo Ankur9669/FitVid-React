@@ -1,6 +1,6 @@
 .right-container{
     grid-column: 2 / 3;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 @media only screen and (max-width: 1450px){
     .right-container{

@@ -1,6 +1,5 @@
 .left-container{
    grid-column: 1 / 2;
-   /* min-height: 120vh; */
 }
 .single-video-container{
     max-width: 59.3rem;
