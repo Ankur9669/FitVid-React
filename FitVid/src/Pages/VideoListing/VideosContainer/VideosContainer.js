@@ -7,7 +7,7 @@ import { useCategory } from "../../../Context/category-context";
 const VideosContainer = () => {
   const [videos, setVideos] = useState([]);
   const [videoToShow, setVideosToShow] = useState([]);
-  const { category } = useCategory();
+  const { category, search } = useCategory();
 
   useEffect(async () => {
     const { data, success, message } = await fetchVideos();
@@ -21,16 +21,23 @@ const VideosContainer = () => {
   }, []);
 
   useEffect(() => {
-    let filteredVideos = [];
-    if (category !== "All") {
+    let filteredVideos = videos;
+
+    if (search !== "") {
       filteredVideos = videos.filter(
+        (video) =>
+          video.categoryName.toLowerCase().includes(search.toLowerCase()) ||
+          video.title.toLowerCase().includes(search.toLowerCase()) ||
+          video.channelName.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+    if (category !== "All") {
+      filteredVideos = filteredVideos.filter(
         (video) => video.categoryName === category
       );
-    } else {
-      filteredVideos = videos;
     }
     setVideosToShow(filteredVideos);
-  }, [category]);
+  }, [category, search]);
   return (
     <div className="videos-container">
       {videoToShow.map((video) => {
