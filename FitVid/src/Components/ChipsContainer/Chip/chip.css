@@ -1,0 +1,20 @@
+.chip{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    border: 2px solid var(--primary-color);
+    width: fit-content;
+    padding: 0.5rem 2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.chip-active{
+    background-color: var(--primary-color-dark);
+    font-weight: 600;
+}
+.chip:hover{
+    background-color: var(--primary-color-dark);
+    font-weight: 600;
+}

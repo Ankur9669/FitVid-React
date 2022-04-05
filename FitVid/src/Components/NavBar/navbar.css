@@ -18,7 +18,12 @@
 .input-box .navbar-search{
     width: 100%;
 }
-
+.navbar-search{
+    color: var(--primary-text-color);
+}
+.input-box .navbar-search:focus{
+    border: 2px solid var(--primary-text-color);
+}
 @media only screen and (max-width: 600px){
     .logo{
         margin: 0 1rem;
