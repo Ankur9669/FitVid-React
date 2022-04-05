@@ -2,7 +2,10 @@ import React from "react";
 import "./navbar.css";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import { Link } from "react-router-dom";
+import { useCategory } from "../../Context/category-context";
+
 const Navbar = () => {
+  const { search, setSearch } = useCategory();
   return (
     <nav className="navbar">
       <div className="logo-container">
@@ -16,6 +19,7 @@ const Navbar = () => {
             type="search"
             className="input simple-input navbar-search"
             placeholder="Search Videos"
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
       </div>

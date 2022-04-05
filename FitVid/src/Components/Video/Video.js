@@ -26,7 +26,7 @@ import {
 } from "./index";
 import { usePlayLists } from "../../Context/playlist-context";
 import { removeFromPlayList } from "../PlayListModal/PlayListItem";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./video.css";
 
 const Video = (props) => {
