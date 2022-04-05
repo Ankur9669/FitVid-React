@@ -38,20 +38,20 @@ FitVid is a video platform, where you can find all the videos related to fitness
 
 # HomePage
 
-![fitvid-image](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid.png)
+![fitvid-image](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid.png)
 
 # Video Listing Page
 
-![fitvid-videolisting](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-videolisting.png)
+![fitvid-videolisting](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid-videolisting.png)
 
 # Single Video Page
 
-![fitvid-singlevideo](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-single-video-page.png)
+![fitvid-singlevideo](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid-single-video-page.png)
 
 # Login
 
-![fitvid-login](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-login.png)
+![fitvid-login](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid-login.png)
 
 # SignUp
 
-![fitvid-signup](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-signup.png)
+![fitvid-signup](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/public/images/fitvid-signup.png)
