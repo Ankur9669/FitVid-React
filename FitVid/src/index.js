@@ -11,14 +11,14 @@ import { HistoryProvider } from "./Context/history-context";
 import { WatchLaterProvider } from "./Context/watch-later-context";
 import { PlayListModalProvider } from "./Context/playlist-modal-context";
 import { PlayListsProvider } from "./Context/playlist-context";
-import { VideosProvider } from "./Context/videos-context";
+import { CategoryProvider } from "./Context/category-context";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <VideosProvider>
+    <CategoryProvider>
       <PlayListsProvider>
         <PlayListModalProvider>
           <WatchLaterProvider>
@@ -36,7 +36,7 @@ ReactDOM.render(
           </WatchLaterProvider>
         </PlayListModalProvider>
       </PlayListsProvider>
-    </VideosProvider>
+    </CategoryProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

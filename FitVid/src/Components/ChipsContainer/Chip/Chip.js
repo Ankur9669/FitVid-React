@@ -1,11 +1,13 @@
 import React from "react";
+import { useCategory } from "../../../Context/category-context";
 import "./chip.css";
 
-const Chip = ({ title, id, activeChipCategory, setActiveChipCategory }) => {
+const Chip = ({ title, id }) => {
+  const { category, setCategory } = useCategory();
   return (
     <div
-      className={title === activeChipCategory ? "chip chip-active" : "chip"}
-      onClick={() => setActiveChipCategory(title)}
+      className={category === title ? "chip chip-active" : "chip"}
+      onClick={() => setCategory(title)}
     >
       {title}
     </div>
