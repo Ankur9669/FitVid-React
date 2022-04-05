@@ -4,7 +4,11 @@ const userReducer = (state, action) => {
       return { ...state, user: action.payload.value, isUserLoggedIn: true };
 
     case "LOGOUT":
-      return initialState;
+      localStorage.removeItem("token");
+      return {
+        user: {},
+        isUserLoggedIn: false,
+      };
   }
 };
 

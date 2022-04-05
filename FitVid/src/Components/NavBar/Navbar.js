@@ -3,9 +3,14 @@ import "./navbar.css";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import { Link } from "react-router-dom";
 import { useCategory } from "../../Context/category-context";
-
+import { useUser } from "../../Context/user-context";
 const Navbar = () => {
   const { search, setSearch } = useCategory();
+  const { user, dispatchUser } = useUser();
+
+  const handleLogoutClick = () => {
+    dispatchUser({ type: "LOGOUT" });
+  };
   return (
     <nav className="navbar">
       <div className="logo-container">
@@ -24,9 +29,17 @@ const Navbar = () => {
         </div>
       </div>
       <div className="btn-container-navbar">
-        <Link to="/login">
-          <PrimaryButton buttonText="Login" />
-        </Link>
+        {!user.isUserLoggedIn ? (
+          <>
+            <Link to="/login">
+              <PrimaryButton buttonText="Login" />
+            </Link>
+          </>
+        ) : (
+          <>
+            <PrimaryButton buttonText="Logout" onClick={handleLogoutClick} />
+          </>
+        )}
       </div>
     </nav>
   );
