@@ -47,3 +47,11 @@ FitVid is a video platform, where you can find all the videos related to fitness
 # Single Video Page
 
 ![fitvid-singlevideo](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-single-video-page.png)
+
+# Login
+
+![fitvid-login](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-login.png)
+
+# SignUp
+
+![fitvid-signup](https://github.com/Ankur9669/FitVid-React/blob/readme/FitVid/build/images/fitvid-signup.png)
