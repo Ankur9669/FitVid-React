@@ -7,7 +7,6 @@ import { getFilteredVideos } from "../../../Util/get-filtered-videos";
 import { useVideos } from "../../../Context/video-context";
 
 const VideosContainer = () => {
-  // const [videos, setVideos] = useState([]);
   const { videos, setVideos } = useVideos();
   const [videoToShow, setVideosToShow] = useState([]);
   const { category, search } = useCategory();
