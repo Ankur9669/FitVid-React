@@ -1,17 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-// import Homepage from "./Pages/HomePage/Homepage";
-// import VideoListing from "./Pages/VideoListing/VideoListing";
-// import Login from "./Pages/Authentication/Login/Login";
-// import SignUp from "./Pages/Authentication/Signup/SignUp";
-// import Toasts from "./Util/Toasts/Toasts";
-// import LikedVideos from "./Pages/LikedVideos/LikedVideos";
-// import HistoryPage from "./Pages/HistoryPage/HistoryPage";
-// import WatchLater from "./Pages/WatchLater/WatchLater";
-// import PlayListModal from "./Components/PlayListModal/PlayListModal";
-// import PlayLists from "./Pages/PlayLists/PlayLists";
-// import PlayList from "./Pages/PlayList/PlayList";
-
 import {
   Homepage,
   VideoListing,
@@ -24,6 +12,7 @@ import {
   PlayListModal,
   PlayLists,
   PlayList,
+  SingleVideoPage,
 } from "./Pages/index";
 
 function App() {
@@ -41,6 +30,8 @@ function App() {
         <Route path="watchlater" element={<WatchLater />}></Route>
         <Route path="playlists" element={<PlayLists />}></Route>
         <Route path="playlist/:playlistId" element={<PlayList />}></Route>
+        <Route path="videos/:videoId" element={<SingleVideoPage />}></Route>
+
         {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
       </Routes>
     </div>

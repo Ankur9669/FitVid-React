@@ -9,6 +9,7 @@ import WatchLater from "./WatchLater/WatchLater";
 import PlayListModal from "../Components/PlayListModal/PlayListModal";
 import PlayLists from "./PlayLists/PlayLists";
 import PlayList from "./PlayList/PlayList";
+import SingleVideoPage from "./SingleVideoPage/SingleVideoPage";
 
 export {
   Homepage,
@@ -22,4 +23,5 @@ export {
   PlayListModal,
   PlayLists,
   PlayList,
+  SingleVideoPage,
 };
