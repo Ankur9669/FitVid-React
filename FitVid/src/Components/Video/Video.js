@@ -6,6 +6,7 @@ import {
   AiFillLike,
   AiOutlineLike,
   MdOutlineWatchLater,
+  BsFillPlayFill,
 } from "../../Assets/icons";
 import {
   ReactPlayer,
@@ -42,6 +43,7 @@ const Video = (props) => {
     channelName,
     categoryName,
     description,
+    thumbnailUrl = "/images/fitvid-hero-1.jpg",
   } = video;
   const [showModal, setShowModal] = useState(false);
   const { likedVideos, dispatchLikedVideos } = useLiked();
@@ -189,17 +191,22 @@ const Video = (props) => {
   };
 
   return (
-    <div
-      className="videolisting-video-container"
-      onClick={handleVideoPlayClick}
-    >
-      <ReactPlayer
-        url={url}
-        className="videolisting-video"
-        width="100%"
-        height="15rem"
-        controls={true}
-      />
+    <div className="videolisting-video-container">
+      <div
+        className="videolisting-thumbnail-container"
+        onClick={handleVideoPlayClick}
+      >
+        <img
+          src={thumbnailUrl}
+          alt={title}
+          className="videolisting-video-thumbnail img-responsive"
+        />
+        <div className="videolisting-thumbnail-overlay-container font-medium-large">
+          <BsFillPlayFill />
+          Play
+        </div>
+      </div>
+
       <div className="thumbnail-text-container">
         <div className="thumbnail-container">
           <img

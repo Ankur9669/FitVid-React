@@ -36,20 +36,24 @@ const LeftContainer = () => {
   let isLikedVideo = findIfVideoExistsInArray(likedVideos, videoId);
 
   useEffect(async () => {
-    try {
-      const response = await Axios.get(`/api/video/${videoId}`);
-      if (response.status === 200) {
-        setVideo(response.data.video);
-      } else {
+
+    if (videoId !== "" && videoId != undefined) {
+      try {
+        const response = await Axios.get(`/api/video/${videoId}`);
+        if (response.status === 200) {
+          setVideo(response.data.video);
+        } else {
+          showToast("Unable to fetch Video", "ERROR");
+          navigate("/videos");
+        }
+      } catch (e) {
+        console.log(e);
         showToast("Unable to fetch Video", "ERROR");
         navigate("/videos");
       }
-    } catch (e) {
-      console.log(e);
-      showToast("Unable to fetch Video", "ERROR");
-      navigate("/videos");
     }
-  }, []);
+  }, [videoId]);
+
 
   const handleLikeIconClick = async () => {
     if (!user.isUserLoggedIn) {

@@ -6,6 +6,7 @@ import EmptyList from "../../Components/EmptyList/EmptyList";
 import { usePlayLists } from "../../Context/playlist-context";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useDocumentTitle } from "../../Util/change-document-title";
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   usePlayLists,
   useParams,
   useNavigate,
+  useDocumentTitle,
 };

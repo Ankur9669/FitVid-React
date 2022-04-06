@@ -10,9 +10,10 @@ import {
   useToast,
   useUser,
   deleteHistory,
+  SecondaryButton,
+  useDocumentTitle,
 } from "./index";
 import "./historypage.css";
-import SecondaryButton from "../../Components/Buttons/SecondaryButton";
 
 const HistoryPage = () => {
   const { historyVideos, dispatchHistoryVideos } = useHistory();
@@ -20,6 +21,7 @@ const HistoryPage = () => {
   const { user } = useUser();
   const { showToast } = useToast();
   const navigate = useNavigate();
+  useDocumentTitle("FitVid-History");
 
   useEffect(() => {
     if (!user.isUserLoggedIn) {

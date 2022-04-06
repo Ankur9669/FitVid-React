@@ -4,9 +4,11 @@ import "../videolisting.css";
 import { fetchVideos } from "../../../Util/fetch-videos";
 import { useCategory } from "../../../Context/category-context";
 import { getFilteredVideos } from "../../../Util/get-filtered-videos";
+import { useVideos } from "../../../Context/video-context";
 
 const VideosContainer = () => {
-  const [videos, setVideos] = useState([]);
+  const { videos, setVideos } = useVideos();
+
   const [videoToShow, setVideosToShow] = useState([]);
   const { category, search } = useCategory();
 

@@ -8,6 +8,7 @@ import {
   usePlayLists,
   useParams,
   useNavigate,
+  useDocumentTitle,
 } from "./index";
 import "./playlist.css";
 
@@ -17,6 +18,7 @@ const PlayList = () => {
   const navigate = useNavigate();
   const [playlistVideos, setPlaylistVideos] = useState([]);
   const [playlistTitle, setPlaylistTitle] = useState("");
+  useDocumentTitle("FitVid-Playlist");
 
   useEffect(() => {
     const playlist = playLists.find((playlist) => playlist._id === playlistId);

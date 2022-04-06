@@ -6,6 +6,8 @@ import { useLiked } from "../../Context/liked-context";
 import { useUser } from "../../Context/user-context";
 import { useToast } from "../../Context/toast-context";
 import { useNavigate } from "react-router-dom";
+import EmptyList from "../../Components/EmptyList/EmptyList";
+import { useDocumentTitle } from "../../Util/change-document-title";
 
 export {
   Navbar,
@@ -16,4 +18,6 @@ export {
   useUser,
   useToast,
   useNavigate,
+  EmptyList,
+  useDocumentTitle,
 };
