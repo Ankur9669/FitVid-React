@@ -14,7 +14,7 @@ import {
   PlayList,
   SingleVideoPage,
 } from "./Pages/index";
-import SingleVideoPage from "./Pages/SingleVideoPage/SingleVideoPage";
+
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import Loader from "./Components/Loader/Loader";
 
@@ -36,7 +36,6 @@ function App() {
         <Route path="videos/:videoId" element={<SingleVideoPage />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
         <Route path="loading" element={<Loader />}></Route>
-
       </Routes>
     </div>
   );
