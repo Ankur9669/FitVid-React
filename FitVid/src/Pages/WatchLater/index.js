@@ -7,6 +7,7 @@ import { useWatchLater } from "../../Context/watch-later-context";
 import { useToast } from "../../Context/toast-context";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../LikedVideos";
+import { useDocumentTitle } from "../../Util/change-document-title";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   useToast,
   useNavigate,
   useUser,
+  useDocumentTitle,
 };

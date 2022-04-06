@@ -8,15 +8,17 @@ import {
   useToast,
   useUser,
   useNavigate,
+  EmptyList,
+  useDocumentTitle,
 } from "./index";
 import "./likedvideos.css";
-import EmptyList from "../../Components/EmptyList/EmptyList";
 
 const LikedVideos = () => {
   const { likedVideos } = useLiked();
   const { user } = useUser();
   const { showToast } = useToast();
   const navigate = useNavigate();
+  useDocumentTitle("FitVid-LikedVideos");
 
   useEffect(() => {
     if (!user.isUserLoggedIn) {

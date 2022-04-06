@@ -8,6 +8,8 @@ import { useUser } from "../LikedVideos";
 import { useToast } from "../LikedVideos";
 import { useNavigate } from "react-router-dom";
 import { deleteHistory } from "../../Util/remove-from-history";
+import SecondaryButton from "../../Components/Buttons/SecondaryButton";
+import { useDocumentTitle } from "../LikedVideos";
 
 export {
   Navbar,
@@ -20,4 +22,6 @@ export {
   useToast,
   useNavigate,
   deleteHistory,
+  SecondaryButton,
+  useDocumentTitle,
 };

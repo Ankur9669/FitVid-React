@@ -1,16 +1,12 @@
 import React from "react";
 import "../authentication.css";
-import { AiFillMail } from "react-icons/ai";
-import {
-  AiOutlineMail,
-  AiFillEyeInvisible,
-  AiFillEye,
-} from "../../../Assets/icons";
 import SignupForm from "./SignupForm";
 import AuthenticationBackground from "../AuthenticationBackground";
 import Navbar from "../../../Components/NavBar/Navbar";
+import { useDocumentTitle } from "../../../Util/change-document-title";
 
 function SignUp() {
+  useDocumentTitle("FitVid-Signup");
   return (
     <div>
       <Navbar />

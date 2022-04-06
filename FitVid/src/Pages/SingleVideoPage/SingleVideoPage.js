@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Loader from "../../Components/Loader/Loader";
-import { Navbar, Footer, LeftContainer, RightContainer } from "./index";
+import {
+  Navbar,
+  Footer,
+  LeftContainer,
+  RightContainer,
+  Loader,
+  useDocumentTitle,
+} from "./index";
 import "./singlevideopage.css";
 
 const SingleVideoPage = () => {
   const [loading, setLoading] = useState(true);
+  useDocumentTitle("FitVid-SingleVideo");
 
   useEffect(() => {
     setLoading(false);

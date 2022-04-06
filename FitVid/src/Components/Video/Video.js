@@ -197,8 +197,7 @@ const Video = (props) => {
         <img
           src={thumbnailUrl}
           alt={title}
-          className="videolisting-video-thumbnail"
-          style={{ width: "100%", height: "15rem" }}
+          className="videolisting-video-thumbnail img-responsive"
         />
         <div className="videolisting-thumbnail-overlay-container font-medium-large">
           <BsFillPlayFill />

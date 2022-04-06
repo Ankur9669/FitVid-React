@@ -9,6 +9,7 @@ import {
   useToast,
   useNavigate,
   useUser,
+  useDocumentTitle,
 } from "./index";
 import "./watchlater.css";
 const WatchLater = () => {
@@ -16,6 +17,7 @@ const WatchLater = () => {
   const { user } = useUser();
   const { watchLaterVideos } = useWatchLater();
   const navigate = useNavigate();
+  useDocumentTitle("FitVid-WatchLater");
 
   useEffect(() => {
     if (!user.isUserLoggedIn) {

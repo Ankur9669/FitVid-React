@@ -1,18 +1,33 @@
 import React, { useEffect } from "react";
-import EmptyList from "../../Components/EmptyList/EmptyList";
-import { usePlayLists } from "../../Context/playlist-context";
-import { Navbar, SideBar, useToast, useUser, Footer } from "../LikedVideos";
-import { useNavigate } from "react-router-dom";
-import PlayListVideo from "./PlayListVideo/PlayListVideo";
+// import EmptyList from "../../Components/EmptyList/EmptyList";
+// import { usePlayLists } from "../../Context/playlist-context";
+// import { Navbar, SideBar, useToast, useUser, Footer } from "../LikedVideos";
+// import { useNavigate } from "react-router-dom";
+// import PlayListVideo from "./PlayListVideo/PlayListVideo";
+// import EmptyPlayList from "./EmptyPlayList/EmptyPlayList";
+// import SecondaryButton from "../../Components/Buttons/SecondaryButton";
 import "./playlists.css";
-import EmptyPlayList from "./EmptyPlayList/EmptyPlayList";
-import SecondaryButton from "../../Components/Buttons/SecondaryButton";
 
+import {
+  EmptyList,
+  usePlayLists,
+  Navbar,
+  SideBar,
+  useToast,
+  useUser,
+  Footer,
+  useNavigate,
+  PlayListVideo,
+  EmptyPlayList,
+  SecondaryButton,
+  useDocumentTitle,
+} from "./index";
 const PlayLists = () => {
   const { playLists, dispatchPlayLists } = usePlayLists();
   const { user } = useUser();
   const { showToast } = useToast();
   const navigate = useNavigate();
+  useDocumentTitle("FitVid-Playlists");
 
   useEffect(() => {
     if (!user.isUserLoggedIn) {
