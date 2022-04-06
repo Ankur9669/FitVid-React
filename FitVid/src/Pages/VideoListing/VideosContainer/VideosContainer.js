@@ -8,6 +8,7 @@ import { useVideos } from "../../../Context/video-context";
 
 const VideosContainer = () => {
   const { videos, setVideos } = useVideos();
+
   const [videoToShow, setVideosToShow] = useState([]);
   const { category, search } = useCategory();
 

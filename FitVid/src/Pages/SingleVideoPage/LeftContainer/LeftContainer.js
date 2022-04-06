@@ -36,6 +36,7 @@ const LeftContainer = () => {
   let isLikedVideo = findIfVideoExistsInArray(likedVideos, videoId);
 
   useEffect(async () => {
+
     if (videoId !== "" && videoId != undefined) {
       try {
         const response = await Axios.get(`/api/video/${videoId}`);
@@ -52,6 +53,7 @@ const LeftContainer = () => {
       }
     }
   }, [videoId]);
+
 
   const handleLikeIconClick = async () => {
     if (!user.isUserLoggedIn) {

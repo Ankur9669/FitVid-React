@@ -6,6 +6,7 @@ import { useVideos } from "../../../Context/video-context";
 
 const RightContainer = () => {
   const { videos } = useVideos();
+
   const video = videos[0];
   return (
     <div className="right-container">

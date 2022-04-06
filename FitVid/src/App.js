@@ -12,6 +12,7 @@ import {
   PlayListModal,
   PlayLists,
   PlayList,
+  SingleVideoPage,
 } from "./Pages/index";
 import SingleVideoPage from "./Pages/SingleVideoPage/SingleVideoPage";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
@@ -35,7 +36,7 @@ function App() {
         <Route path="videos/:videoId" element={<SingleVideoPage />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
         <Route path="loading" element={<Loader />}></Route>
-        {/* <Route path="forgotpassword" element={<ForgotPassword />}></Route> */}
+
       </Routes>
     </div>
   );

@@ -11,6 +11,7 @@ const Navbar = () => {
   const handleLogoutClick = () => {
     dispatchUser({ type: "LOGOUT" });
   };
+
   return (
     <nav className="navbar">
       <div className="logo-container">
