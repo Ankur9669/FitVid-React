@@ -1,4 +1,5 @@
 import React from "react";
+import ChipsContainer from "../../Components/ChipsContainer/ChipsContainer";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/NavBar/Navbar";
 import SideBar from "../../Components/SideBar/SideBar";
@@ -11,6 +12,7 @@ const VideoListing = () => {
       <div className="content-section">
         <SideBar />
         <div className="content">
+          <ChipsContainer />
           <VideosContainer />
         </div>
       </div>

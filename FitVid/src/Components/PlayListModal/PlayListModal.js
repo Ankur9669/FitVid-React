@@ -7,6 +7,7 @@ import {
   usePlayLists,
   PlayListItem,
 } from "./index";
+
 const PlayListModal = () => {
   const { showPlayListModal, setShowPlayListModal, clickedVideo } = useModal();
   const { playLists } = usePlayLists();
@@ -26,7 +27,11 @@ const PlayListModal = () => {
         </div>
         <div className="playlists">
           {playLists.map((playlist) => (
-            <PlayListItem playlist={playlist} video={clickedVideo} />
+            <PlayListItem
+              playlist={playlist}
+              video={clickedVideo}
+              key={playlist._id}
+            />
           ))}
         </div>
         <div className="playlist-modal-footer">
