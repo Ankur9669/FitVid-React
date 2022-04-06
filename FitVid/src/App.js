@@ -12,8 +12,8 @@ import {
   PlayListModal,
   PlayLists,
   PlayList,
+  SingleVideoPage,
 } from "./Pages/index";
-
 
 function App() {
   return (
