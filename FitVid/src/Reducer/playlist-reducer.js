@@ -12,6 +12,9 @@ const playListReducer = (playLists, action) => {
       newPlayLists[playlistIndex] = updatedplayList;
       return newPlayLists;
 
+    case "RESET":
+      return [];
+
     default:
       return playLists;
   }

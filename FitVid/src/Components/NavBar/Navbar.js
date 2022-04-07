@@ -1,15 +1,40 @@
 import React from "react";
 import "./navbar.css";
-import PrimaryButton from "../Buttons/PrimaryButton";
-import { Link } from "react-router-dom";
-import { useCategory } from "../../Context/category-context";
-import { useUser } from "../../Context/user-context";
+// import PrimaryButton from "../Buttons/PrimaryButton";
+// import { Link } from "react-router-dom";
+// import { useCategory } from "../../Context/category-context";
+// import { useUser } from "../../Context/user-context";
+// import { useHistory } from "../../Context/history-context";
+// import { usePlayLists } from "../../Context/playlist-context";
+// import { useWatchLater } from "../../Context/watch-later-context";
+// import { useLiked } from "../../Context/history-context";
+// import { useToast } from "../../Context/toast-context";
+
+import {
+  PrimaryButton,
+  Link,
+  useCategory,
+  useUser,
+  useHistory,
+  usePlayLists,
+  useWatchLater,
+  useLiked,
+  useToast,
+} from "./index";
 const Navbar = () => {
   const { search, setSearch } = useCategory();
   const { user, dispatchUser } = useUser();
+  const { dispatchLikedVideos } = useLiked();
+  const { dispatchHistoryVideos } = useHistory();
+  const { dispatchPlayLists } = usePlayLists();
+  const { dispatchWatchLaterVideos } = useWatchLater();
 
   const handleLogoutClick = () => {
     dispatchUser({ type: "LOGOUT" });
+    dispatchLikedVideos({ type: "RESET" });
+    dispatchHistoryVideos({ type: "RESET" });
+    dispatchPlayLists({ type: "RESET" });
+    dispatchWatchLaterVideos({ type: "RESET" });
   };
 
   return (
