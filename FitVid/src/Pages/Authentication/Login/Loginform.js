@@ -38,6 +38,7 @@ function Loginform() {
       showToast("Please Enter the details in form", "ERROR");
       return;
     }
+
     const { data, success, message } = await loginUser(
       formDetails.email,
       formDetails.password

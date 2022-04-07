@@ -1,6 +1,5 @@
 import React from "react";
 import "./navbar.css";
-
 import {
   PrimaryButton,
   Link,
@@ -28,6 +27,7 @@ const Navbar = () => {
     dispatchPlayLists({ type: "RESET" });
     dispatchWatchLaterVideos({ type: "RESET" });
     showToast("Logged Out Succesfully", "SUCCESS");
+
   };
 
   return (
