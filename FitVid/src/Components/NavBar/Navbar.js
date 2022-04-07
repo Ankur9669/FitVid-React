@@ -1,15 +1,33 @@
 import React from "react";
 import "./navbar.css";
-import PrimaryButton from "../Buttons/PrimaryButton";
-import { Link } from "react-router-dom";
-import { useCategory } from "../../Context/category-context";
-import { useUser } from "../../Context/user-context";
+import {
+  PrimaryButton,
+  Link,
+  useCategory,
+  useUser,
+  useHistory,
+  usePlayLists,
+  useWatchLater,
+  useLiked,
+  useToast,
+} from "./index";
 const Navbar = () => {
   const { search, setSearch } = useCategory();
   const { user, dispatchUser } = useUser();
+  const { dispatchLikedVideos } = useLiked();
+  const { dispatchHistoryVideos } = useHistory();
+  const { dispatchPlayLists } = usePlayLists();
+  const { dispatchWatchLaterVideos } = useWatchLater();
+  const { showToast } = useToast();
 
   const handleLogoutClick = () => {
     dispatchUser({ type: "LOGOUT" });
+    dispatchLikedVideos({ type: "RESET" });
+    dispatchHistoryVideos({ type: "RESET" });
+    dispatchPlayLists({ type: "RESET" });
+    dispatchWatchLaterVideos({ type: "RESET" });
+    showToast("Logged Out Succesfully", "SUCCESS");
+
   };
 
   return (

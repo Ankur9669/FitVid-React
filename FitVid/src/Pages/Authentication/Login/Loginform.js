@@ -34,6 +34,11 @@ function Loginform() {
 
   const handleLoginClick = async (e) => {
     e.preventDefault();
+    if (formDetails.email === "" || formDetails.password === "") {
+      showToast("Please Enter the details in form", "ERROR");
+      return;
+    }
+
     const { data, success, message } = await loginUser(
       formDetails.email,
       formDetails.password
