@@ -32,6 +32,15 @@ function SignupForm() {
   };
 
   const handleSignUpClick = async () => {
+    if (
+      formDetails.email === "" ||
+      formDetails.password === "" ||
+      formDetails.firstName === "" ||
+      formDetails.lastName === ""
+    ) {
+      showToast("Please Enter the details in form", "ERROR");
+      return;
+    }
     const { data, success, message } = await signUpUser(
       formDetails.firstName,
       formDetails.lastName,
