@@ -1,14 +1,5 @@
 import React from "react";
 import "./navbar.css";
-// import PrimaryButton from "../Buttons/PrimaryButton";
-// import { Link } from "react-router-dom";
-// import { useCategory } from "../../Context/category-context";
-// import { useUser } from "../../Context/user-context";
-// import { useHistory } from "../../Context/history-context";
-// import { usePlayLists } from "../../Context/playlist-context";
-// import { useWatchLater } from "../../Context/watch-later-context";
-// import { useLiked } from "../../Context/history-context";
-// import { useToast } from "../../Context/toast-context";
 
 import {
   PrimaryButton,
@@ -28,6 +19,7 @@ const Navbar = () => {
   const { dispatchHistoryVideos } = useHistory();
   const { dispatchPlayLists } = usePlayLists();
   const { dispatchWatchLaterVideos } = useWatchLater();
+  const { showToast } = useToast();
 
   const handleLogoutClick = () => {
     dispatchUser({ type: "LOGOUT" });
@@ -35,6 +27,7 @@ const Navbar = () => {
     dispatchHistoryVideos({ type: "RESET" });
     dispatchPlayLists({ type: "RESET" });
     dispatchWatchLaterVideos({ type: "RESET" });
+    showToast("Logged Out Succesfully", "SUCCESS");
   };
 
   return (
